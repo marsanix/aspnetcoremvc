@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Part List";
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Item ID</th>
+            <th>Part Number</th>
+            <th>Manufacturer</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var part in (IEnumerable<Parts>)@ViewData["PartList"])
+        {
+            <tr>
+                <td>@part.ItemId</td>
+                <td>@part.PartNum</td>
+                <td>@part.Manufacturer</td>
+                <td>@part.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
